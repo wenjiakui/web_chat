@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>图文聊天</title>
+    <link rel="canonical" href="."/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="alternate icon" type="image/png"
+          href="/static/assets/i/favicon.png">
+    <link rel="stylesheet" href="/static/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/static/assets/css/app.css"/>
+    <!-- css 比较少，直接写到页面里了。若需要，可以放到一个单独文件里-->
+    <link rel="stylesheet" href="/static/css/webrtc.css"/>
+</head>
+<body onresize="bodyOnResize()">
+<!--[if lte IE 9 ]>
+<div class="am-alert am-alert-danger ie-warning" data-am-alert>
+    <button type="button" class="am-close">&times;</button>
+    <div class="am-container">温馨提醒：你的浏览器太古董了，无法使用此功能！</div>
+</div><![endif]-->
+<div id="container" ondblclick="enterFullScreen()">
+    <div id="card" style="display: flex; justify-content: center; height: 100%; width: 100%; margin-top: 1%;">
+        <div id="remote" style="height: 70%; width: 100%; margin-right: 30px;">
+            <video width="100%" height="100%" id="remoteVideo" autoplay="autoplay"/>
+        </div>
+        <div id="mini" style="height:70%; width:100%; ">
+            <video width="100%" height="100%" id="miniVideo" autoplay="autoplay"/>
+        </div>
+    </div>
+</div>
+<!-- 加载框 -->
+<div class="am-modal am-modal-loading am-modal-no-btn" tabindex="-1"
+     id="my-modal-loading">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd" id="tips-content">
+            正在访问摄像头和麦克风，请允许...
+        </div>
+        <div class="am-modal-bd">
+            <span class="am-icon-spinner am-icon-spin"></span>
+        </div>
+    </div>
+</div>
+
+<script src="/static/assets/js/zepto.min.js">
+</script>
+<script src="/static/assets/js/amazeui.min.js">
+</script>
+<script src="/static/js/config.js">
+</script>
+<script src="/static/js/webrtc.js">
+</script>
+</body>
+</html>

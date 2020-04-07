@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>主页</title>
+</head>
+<body>
+<h1>这是一个主页!</h1>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<p>Click <a th:href="@{/chatroom}">here</a> to see a chatroom.</p>
+<p>Click <a th:href="@{/chat(receiver=admin)}">here to chat with admin</a> to see a chatroom.</p>
+<p>Click <a th:href="@{/chat(receiver=user1)}">here to chat with user1</a> to see a chatroom.</p>
+<p>Click <a th:href="@{/chat(receiver=user2)}">here to chat with user2</a> to see a chatroom.</p>
+</body>
+</html>

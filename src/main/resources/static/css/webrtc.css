@@ -1,0 +1,52 @@
+html, body {
+    background-color: #000000;
+    height: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    background-color: #000000;
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    -webkit-perspective: 1000px;
+}
+
+#card {
+    -webkit-transition-property: rotation;
+    -webkit-transition-duration: 2s;
+    -webkit-transform-style: preserve-3d;
+}
+
+#remote {
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*-webkit-backface-visibility: hidden;*/
+}
+
+#mini {
+    /*position: absolute;*/
+    /*height: 30%;*/
+    /*width: 30%;*/
+    /*bottom: 32px;*/
+    /*left: 4px;*/
+    opacity: 1.0;
+}
+
+#remoteVideo {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 2s;
+}
+
+#miniVideo {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 2s;
+}

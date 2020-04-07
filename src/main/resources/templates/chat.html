@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <title>Chat Util</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="/static/css/chat.css"/>
+    <link rel="stylesheet" href="/static/layui/css/modules/layer/default/layer.css"/>
+    <script src="/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+    <script type="text/javascript" src="/static/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="/static/js/zUI.js"></script>
+    <script src="/static/js/jquery.slimscroll.js"></script>
+    <script src="/static/layui/layer.js"></script>
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/jquery.qqFace.js"></script>
+</head>
+<body>
+<div class="windows_parent">
+    <!--聊天窗口-->
+    <div class="windows_talk">
+        <!--聊天窗口的头部-->
+        <div class="windows_top">
+            <div class="windows_top_box">
+                <span id="online_status">您的状态:离线</span>
+                <span id="friend_nickName"></span>
+            </div>
+        </div>
+
+        <!--聊天窗口中间部分，聊天记录展现区-->
+        <div class="windows_body">
+            <div class="chat_text">
+                <ul class="content" id="chat_history">
+                </ul>
+            </div>
+        </div>
+        <!--操作区-->
+        <div class="windows_tool" id="toolbox">
+            <!--工具栏：表情、文件、聊天记录、视频通话-->
+            <div class="tool_icon">
+                <!--表情包-->
+                <a href="javascript:;" id="emoji"></a>
+                <!--文件-->
+                <a href="javascript:;" id="file"></a>
+                <!--聊天记录-->
+                <a href="javascript:;"id="history"></a>
+                <!--视频通话-->
+                <a href="javascript:;" id="videoCall" onclick="videoCall()"></a>
+            </div>
+            <!--聊天内容输入区-->
+            <div class="input_area">
+                <textarea name="input_area" rows="" cols="" id="input_area"></textarea>
+                <button id="send" onclick="sendMessage()">发送（S）</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
